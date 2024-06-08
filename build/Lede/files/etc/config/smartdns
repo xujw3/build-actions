@@ -1,0 +1,779 @@
+
+config smartdns
+	option server_name 'SmartDNS'
+	option ipv6_server '1'
+	option tcp_server '1'
+	option tls_server '0'
+	option doh_server '0'
+	option auto_update_day_time '5'
+	option auto_update_week_time '*'
+	option bind_device '1'
+	option bind_device_name 'lo'
+	option cache_persist '1'
+	option dualstack_ip_selection '1'
+	option log_output_mode 'file'
+	option mdns_lookup '1'
+	option serve_expired '1'
+	option prefetch_domain '1'
+	option resolve_local_hostnames '1'
+	option seconddns_force_aaaa_soa '1'
+	option seconddns_no_rule_nameserver '1'
+	option seconddns_port '5335'
+	option seconddns_server_group 'GFW'
+	option seconddns_tcp_server '1'
+	option seconddns_no_speed_check '1'
+	option force_https_soa '0'
+	option seconddns_force_https_soa '0'
+	option response_mode 'fastest-response'
+	option speed_check_mode 'ping,tcp:443,tcp:80'
+	option rr_ttl '60'
+	option rr_ttl_min '3'
+	option rr_ttl_max '60'
+	option port '6053'
+	option auto_set_dnsmasq '1'
+	list conf_files 'anti-ad-for-smartdns.conf'
+	list conf_files 'neodevpro.conf'
+	list conf_files 'adrules.conf'
+	option proxy_server 'socks5://smartdns:123456@127.0.0.1:7891'
+	option old_port '6053'
+	option old_enabled '0'
+	option old_auto_set_dnsmasq '1'
+
+config server
+	option ip 'https://1.1.1.1/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Cloudflare(Remote-1)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'one.one.one.one'
+	option enabled '1'
+
+config server
+	option ip 'https://1.0.0.1/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Cloudflare(Remote-2)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'one.one.one.one'
+	option enabled '1'
+
+config server
+	option ip 'https://2606:4700:4700::1111/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Cloudflare(Remote-3)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'one.one.one.one'
+	option enabled '0'
+
+config server
+	option ip 'https://2606:4700:4700::1001/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Cloudflare(Remote-4)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'one.one.one.one'
+	option enabled '0'
+
+config server
+	option ip 'https://9.9.9.10/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Quad9(Remote-1)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'dns10.quad9.net'
+	option enabled '1'
+
+config server
+	option ip 'https://149.112.112.10/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Quad9(Remote-2)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'dns10.quad9.net'
+	option enabled '1'
+
+config server
+	option ip 'https://2620:fe::10/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Quad9(Remote-3)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'dns10.quad9.net'
+	option enabled '0'
+
+config server
+	option ip 'https://2620:fe::fe:10/dns-query'
+	option server_group 'GFW'
+	option exclude_default_group '1'
+	option type 'https'
+	option name 'Quad9(Remote-4)'
+	option use_proxy '1'
+	option port '443'
+	option http_host 'dns10.quad9.net'
+	option enabled '0'
+
+config server
+	option name 'Ali(1)'
+	option port '853'
+	option type 'tls'
+	option ip '223.5.5.5'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'Ali(2)'
+	option port '853'
+	option type 'tls'
+	option ip '223.6.6.6'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'Ali(3)'
+	option port '853'
+	option type 'tls'
+	option ip '2400:3200::1'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'Ali(4)'
+	option port '853'
+	option type 'tls'
+	option ip '2400:3200:baba::1'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'DNSPod(1)'
+	option port '853'
+	option type 'tls'
+	option ip '1.12.12.12'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'DNSPod(2)'
+	option port '853'
+	option type 'tls'
+	option ip '120.53.53.53'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(1)'
+	option port '853'
+	option type 'tls'
+	option ip '101.198.191.4'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(2)'
+	option port '853'
+	option type 'tls'
+	option ip '101.199.113.208'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(3)'
+	option port '853'
+	option type 'tls'
+	option ip '36.99.170.86'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(4)'
+	option port '853'
+	option type 'tls'
+	option ip '180.163.249.75'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(5)'
+	option port '853'
+	option type 'tls'
+	option ip '112.65.69.15'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(6)'
+	option port '853'
+	option type 'tls'
+	option ip '101.199.254.118'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(7)'
+	option port '853'
+	option type 'tls'
+	option ip '123.6.48.18'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(8)'
+	option port '853'
+	option type 'tls'
+	option ip '221.181.72.233'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(9)'
+	option port '853'
+	option type 'tls'
+	option ip '111.7.73.60'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name '360(10)'
+	option port '853'
+	option type 'tls'
+	option ip '39.156.84.71'
+	option server_group 'China'
+	option exclude_default_group '1'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(1)'
+	option port '853'
+	option type 'tls'
+	option ip '208.67.222.222'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(2)'
+	option port '853'
+	option type 'tls'
+	option ip '208.67.220.220'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(3)'
+	option port '853'
+	option type 'tls'
+	option ip '2620:119:35::35'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(4)'
+	option port '853'
+	option type 'tls'
+	option ip '2620:119:53::53'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(5)'
+	option port '443'
+	option type 'https'
+	option ip 'https://208.67.222.222/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.opendns.com'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(6)'
+	option port '443'
+	option type 'https'
+	option ip 'https://208.67.220.220/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.opendns.com'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(7)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2620:119:35::35/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.opendns.com'
+	option enabled '1'
+
+config server
+	option name 'OpenDNS(8)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2620:119:53::53/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.opendns.com'
+	option enabled '1'
+
+config server
+	option name 'Google(1)'
+	option port '853'
+	option type 'tls'
+	option ip '8.8.8.8'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Google(2)'
+	option port '853'
+	option type 'tls'
+	option ip '8.8.4.4'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Google(3)'
+	option port '853'
+	option type 'tls'
+	option ip '2001:4860:4860::8888'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Google(4)'
+	option port '853'
+	option type 'tls'
+	option ip '2001:4860:4860::8844'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Google(5)'
+	option port '443'
+	option type 'https'
+	option ip 'https://8.8.8.8/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.google'
+	option enabled '1'
+
+config server
+	option name 'Google(6)'
+	option port '443'
+	option type 'https'
+	option ip 'https://8.8.4.4/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.google'
+	option enabled '1'
+
+config server
+	option name 'Google(7)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:4860:4860::8888/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.google'
+	option enabled '1'
+
+config server
+	option name 'Google(8)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:4860:4860::8844/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.google'
+	option enabled '1'
+
+config server
+	option name 'Quad9(1)'
+	option port '853'
+	option type 'tls'
+	option ip '9.9.9.11'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Quad9(2)'
+	option port '853'
+	option type 'tls'
+	option ip '149.112.112.11'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Quad9(3)'
+	option port '853'
+	option type 'tls'
+	option ip '2620:fe::11'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Quad9(4)'
+	option port '853'
+	option type 'tls'
+	option ip '2620:fe::fe:11'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'Quad9(5)'
+	option port '443'
+	option type 'https'
+	option ip 'https://9.9.9.11/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns11.quad9.net'
+	option enabled '1'
+
+config server
+	option name 'Quad9(6)'
+	option port '443'
+	option type 'https'
+	option ip 'https://149.112.112.11/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns11.quad9.net'
+	option enabled '1'
+
+config server
+	option name 'Quad9(7)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2620:fe::11/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns11.quad9.net'
+	option enabled '1'
+
+config server
+	option name 'Quad9(8)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2620:fe::fe:11/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns11.quad9.net'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(1)'
+	option port '853'
+	option type 'tls'
+	option ip '101.101.101.101'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(2)'
+	option port '853'
+	option type 'tls'
+	option ip '101.102.103.104'
+	option server_group 'OverSea'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(3)'
+	option port '443'
+	option type 'https'
+	option ip 'https://101.101.101.101/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.twnic.tw'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(4)'
+	option port '443'
+	option type 'https'
+	option ip 'https://101.102.103.104/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.twnic.tw'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(5)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:de4::101/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.twnic.tw'
+	option enabled '1'
+
+config server
+	option name 'TWNIC(6)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:de4::102/dns-query'
+	option server_group 'OverSea'
+	option http_host 'dns.twnic.tw'
+	option enabled '1'
+
+config server
+	option name 'IIJ(5)'
+	option port '443'
+	option type 'https'
+	option ip 'https://103.2.57.5/dns-query'
+	option server_group 'OverSea'
+	option http_host 'public.dns.iij.jp'
+	option enabled '1'
+
+config server
+	option name 'IIJ(6)'
+	option port '443'
+	option type 'https'
+	option ip 'https://103.2.57.6/dns-query'
+	option server_group 'OverSea'
+	option http_host 'public.dns.iij.jp'
+	option enabled '1'
+
+config server
+	option name 'IIJ(7)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:300::5/dns-query'
+	option server_group 'OverSea'
+	option http_host 'public.dns.iij.jp'
+	option enabled '1'
+
+config server
+	option name 'IIJ(8)'
+	option port '443'
+	option type 'https'
+	option ip 'https://2001:300::6/dns-query'
+	option server_group 'OverSea'
+	option http_host 'public.dns.iij.jp'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_HK(1)'
+	option ip 'https://45.125.0.26/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'hk-hkg.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_HK(2)'
+	option ip 'https://2403:2c80::26/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'hk-hkg.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_JP(1)'
+	option ip 'https://103.121.210.210/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'jp-nrt.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_JP(2)'
+	option ip 'https://2403:fbc0:1000::babe/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'jp-nrt.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_JP(3)'
+	option ip 'https://202.5.221.130/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'jp-kix.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_JP(4)'
+	option ip 'https://2403:ac80:1030::2/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'jp-kix.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_KR(1)'
+	option ip 'https://3.34.32.82/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'kr-sel.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_KR(2)'
+	option ip 'https://2406:da12:6cb:df00:7a77:c387:2bed:613c/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'kr-sel.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_SG(1)'
+	option ip 'https://165.22.61.129/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'sg-sin.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'DNS.SB_SG(2)'
+	option ip 'https://2400:6180:0:d0::45a:b001/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'sg-sin.doh.sb'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_HK(1)'
+	option ip 'https://45.11.104.186/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_HK(2)'
+	option ip 'https://2a00:11c0:17:429::3/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_TW(1)'
+	option ip 'https://45.150.242.161/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_TW(2)'
+	option ip 'https://2407:b9c0:b001:2e8:5054:ff:fe80:b1c3/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_JP(1)'
+	option ip 'https://103.170.232.254/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_JP(2)'
+	option ip 'https://2a0b:4341:b02:166:5054:ff:fe53:ab1/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_KR(1)'
+	option ip 'https://103.127.124.46/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_KR(2)'
+	option ip 'https://2401:c080:1c01:ff9:5400:3ff:fe77:e880/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_SG(1)'
+	option ip 'https://194.156.163.172/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config server
+	option name 'NextDNS_SG(2)'
+	option ip 'https://2401:c080:1400:7fa3:5400:4ff:fe73:5582/dns-query'
+	option port '443'
+	option type 'https'
+	option server_group 'OverSea'
+	option http_host 'dns.nextdns.io'
+	option enabled '1'
+
+config domain-rule
+
+config client-rule
+	option enabled '0'
+	option dualstack_ip_selection '1'
+	option force_https_soa '0'
+
+config ip-rule
+	option enabled '0'
+
+config download-file
+	option name 'anti-ad-for-smartdns.conf'
+	option url 'https://anti-ad.net/anti-ad-for-smartdns.conf'
+	option type 'config'
+	option desc 'anti-ad'
+
+config download-file
+	option url 'https://raw.githubusercontent.com/neodevpro/neodevhost/master/smartdns.conf'
+	option type 'config'
+	option name 'neodevpro.conf'
+	option desc 'neodevpro'
+
+config download-file
+	option type 'list'
+	option name 'chinalist.conf'
+	option url 'https://raw.githubusercontent.com/kingmoon3/chinalist/main/chinalist.conf'
+	option desc 'chinalist'
+
+config download-file
+	option name 'adrules.conf'
+	option url 'https://adrules.top/smart-dns.conf'
+	option desc 'adrules'
+	option type 'config'
+
