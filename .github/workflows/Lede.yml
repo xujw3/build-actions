@@ -23,7 +23,7 @@ on:
       CONFIG_FILE:
         description: '请选择配置文件'
         required: true
-        default: 'n1'
+        default: 'x86_64'
         type: choice
         options:
           - 'aarch64'
