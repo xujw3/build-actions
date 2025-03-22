@@ -27,8 +27,6 @@ on:
         type: choice
         options:
           - 'aarch64'
-          - 'n1'
-          - 'PI'
           - 'asus_rt-acrh17'
           - 'd-team_newifi-d2'
           - 'p2w_r619ac-128m'
@@ -71,7 +69,7 @@ on:
       UPLOAD_RELEASE:
         description: '发布固件到 Github Releases'
         required: false
-        default: 'true'
+        default: 'false'
         type: boolean
       CACHEWRTBUILD_SWITCH:
         description: '缓存加速编译'
